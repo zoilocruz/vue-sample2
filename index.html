@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample VueJs</title>
+    <link href="styles.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+  <div>
+    <h1>Multiple Instance</h1>
+    <div id="multiple-instance-one">
+      <h2>{{ title }}</h2>
+      <p>{{ greet }}</p>
+    </div>
+    <div id="multiple-instance-two">
+      <h2>{{ title }}</h2>
+      <p>{{ greet }}</p>
+      <button v-on:click="changeTitle" type="button">Change title</button>
+    </div>
+  </div>
+
+  <div>
+    <h1>Components</h1>
+    <div id="component-one">
+      <h2>{{ title }}</h2>
+
+      <greeting></greeting>
+    </div>
+    <div id="component-two">
+      <h2>{{ title }}</h2>
+
+      <greeting></greeting>
+    </div>
+  </div>
+
+  <div>
+    <h1>Referencing with $ref</h1>
+    <div id="reference">
+      <label>First Name</label>
+      <input type="text" ref="input"><br/>
+      <label>Last Name</label>
+      <input type="text" ref="name"><br/>
+      <div ref="test">
+        Hello World
+      </div>
+      <p>{{ fullname }}</p>
+
+      <button type="button" v-on:click="refRefs" name="button">Submit</button>
+    </div>
+  </div>
+
+
+  <script src="multiple-instance.js"></script>
+  <script src="components.js"></script>
+  <script src="reference.js"></script>
+</body>
+</html>
